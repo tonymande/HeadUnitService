@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 
 import ioio.lib.util.IOIOLooper;
 import ioio.lib.util.android.IOIOService;
@@ -44,7 +45,8 @@ public class IoioService extends IOIOService {
                     //si4703Looper.setPower(Boolean.parseBoolean(intent.getStringExtra(IOIOActions.EXTRA_PARAM1)));
                     break;
                 case IoioActions.ACTION_SEND_COMMAND:
-                    si4703Looper.sendCommand();
+                    //si4703Looper.sendCommand();
+                    Log.i("IoioService", "sendCommand called");
                     break;
                 case IoioActions.STOPSERVICE:
                     nm.cancel(0);
